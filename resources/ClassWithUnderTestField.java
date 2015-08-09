@@ -1,0 +1,4 @@
+class ClassWithUnderTestFieldTest {
+
+    ClassWithUnderTestField underTest;
+}
