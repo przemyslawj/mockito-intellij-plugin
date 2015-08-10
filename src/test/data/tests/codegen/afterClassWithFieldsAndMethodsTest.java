@@ -1,12 +1,20 @@
-package org.mockito.plugin.action;
-
 import org.junit.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
 
+import static org.junit.Assert.assertEquals;
+
+@RunWith(MockitoJUnitRunner.class)
 class ClassWithFieldsAndMethodsTest {
 
     private static final int VAL1 = 1;
 
     private String testValue = "value";
+    @Mock
+    private Random random;
+    @InjectMocks
+    private ClassWithFieldsAndMethods underTest;
 
     @Test
     public void testFoo() throws Exception {

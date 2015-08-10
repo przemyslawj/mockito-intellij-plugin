@@ -1,9 +1,13 @@
 package org.mockito.plugin.codegen;
 
-import com.intellij.openapi.project.Project;
-import com.intellij.psi.*;
+import com.intellij.psi.PsiAnnotation;
+import com.intellij.psi.PsiClass;
+import com.intellij.psi.PsiJavaFile;
+import com.intellij.psi.PsiModifierList;
 
 /**
+ * Inserts annotation MockitoJUnitRunner.class annotation for the test.
+ *
  * Created by przemek on 8/8/15.
  */
 public class RunnerCodeInjector implements CodeInjector {
@@ -12,11 +16,16 @@ public class RunnerCodeInjector implements CodeInjector {
     public static final String RUN_WITH_SHORT_CLASS_NAME = "RunWith";
     public static final String RUN_WITH_QUALIFIED_CLASS_NAME = "org.junit.runner." + RUN_WITH_SHORT_CLASS_NAME;
 
-    public void insert(PsiJavaFile psiJavaFile) {
-        Project project = psiJavaFile.getProject();
-        ImportOrganizer importOrganizer = new ImportOrganizer(JavaPsiFacade.getInstance(project));
+    private final PsiJavaFile psiJavaFile;
+    private final ImportOrganizer importOrganizer;
 
-        PsiClass psiClass = chooseTestClass(psiJavaFile.getClasses());
+    public RunnerCodeInjector(PsiJavaFile psiJavaFile, ImportOrganizer importOrganizer) {
+        this.psiJavaFile = psiJavaFile;
+        this.importOrganizer = importOrganizer;
+    }
+
+    public void inject() {
+        PsiClass psiClass = MockitoPluginUtils.getUnitTestClass(psiJavaFile);
         PsiModifierList modifierList = psiClass.getModifierList();
         if (!containsRunnerAnnotation(modifierList)) {
             modifierList.addAnnotation("RunWith(MockitoJUnitRunner.class)");
@@ -34,8 +43,4 @@ public class RunnerCodeInjector implements CodeInjector {
         return false;
     }
 
-    private PsiClass chooseTestClass(PsiClass[] classes) {
-        //TODO(przemek) fix for multiple classes, should return the outer class
-        return classes[0];
-    }
 }

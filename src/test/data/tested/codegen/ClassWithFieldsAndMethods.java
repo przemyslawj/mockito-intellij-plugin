@@ -1,5 +1,3 @@
-package org.mockito.plugin.action;
-
 import java.util.Random;
 
 class ClassWithFieldsAndMethods {
