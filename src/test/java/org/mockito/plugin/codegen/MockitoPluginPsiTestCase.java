@@ -21,7 +21,7 @@ import java.util.regex.Pattern;
 /**
  * Created by przemek on 8/9/15.
  */
-public class MockitoPluginPsiTestCase extends LightCodeInsightFixtureTestCase {
+public abstract class MockitoPluginPsiTestCase extends LightCodeInsightFixtureTestCase {
 
     static class MockitoProjectDescriptor extends DefaultLightProjectDescriptor {
         @Override

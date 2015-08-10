@@ -1,0 +1,26 @@
+plugins {
+    id "org.jetbrains.intellij" version "0.0.15"
+}
+
+group 'org.mockito.plugin'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'org.jetbrains.intellij'
+apply plugin: 'java'
+
+intellij {
+    version '14.1.4'
+    pluginName 'mockito-generator' 
+}
+
+sourceCompatibility = 1.7
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.mockito:mockito-all:1.10.19'
+    compile 'com.google.guava:guava:18.0'
+}
+
