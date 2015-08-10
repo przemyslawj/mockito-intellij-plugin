@@ -27,4 +27,10 @@ public class GenMockitoCodeActionTest extends MockitoPluginPsiTestCase {
         testFile("codegen/beforeClassWithFieldsAndMethodsTest.java",
                 "codegen/afterClassWithFieldsAndMethodsTest.java");
     }
+
+    @Test
+    public void testInsertIgnoresFileWithAllMocksInserted() throws Exception {
+        testFile("codegen/beforeClassWithAllMocksTest.java",
+                "codegen/afterClassWithAllMocksTest.java");
+    }
 }

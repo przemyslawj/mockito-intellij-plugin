@@ -22,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FieldsCodeInjector.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FieldsCodeInjector.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/mockito/plugin/codegen/FieldsCodeInjector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="121" column="65" selection-start-line="121" selection-start-column="65" selection-end-line="121" selection-end-column="65" />
+            <state vertical-scroll-proportion="0.5555556">
+              <caret line="88" column="114" selection-start-line="88" selection-start-column="114" selection-end-line="88" selection-end-column="114" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/org/mockito/plugin/codegen/GenMockitoCodeActionTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="58" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -70,18 +70,6 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GenMockitoActionHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/mockito/plugin/action/GenMockitoActionHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -114,20 +102,36 @@
         <entry file="file://$PROJECT_DIR$/src/test/data/tests/codegen/afterClassWithMockitoRunner.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="beforeClassWithAllMocksTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/data/tests/codegen/beforeClassWithAllMocksTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="false" />
+                <element signature="e#601#602#0" expanded="false" />
+                <element signature="e#625#626#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="afterClassWithFieldsAndMethodsTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/data/tests/codegen/afterClassWithFieldsAndMethodsTest.java">
+      <file leaf-file-name="afterClassWithAllMocksTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/data/tests/codegen/afterClassWithAllMocksTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4074074">
-              <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-              <folding />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#601#602#0" expanded="false" />
+                <element signature="e#625#626#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -154,7 +158,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/org/mockito/plugin/action/NewTestActionHandler.java" />
         <option value="$PROJECT_DIR$/src/org/mockito/plugin/action/NewTestAction.java" />
         <option value="$PROJECT_DIR$/src/org/mockito/plugin/action/GenerateMockitoAction.java" />
         <option value="$PROJECT_DIR$/src/org/mockito/plugin/action/GenerateMockitoActionHandler.java" />
@@ -195,7 +198,6 @@
         <option value="$PROJECT_DIR$/src/test/java/org/mockito/plugin/codegen/RunnerCodeInjectorTest.java" />
         <option value="$PROJECT_DIR$/src/test/data/tests/codegen/beforeEmptyClassTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/mockito/plugin/codegen/FieldsCodeInjectorTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/org/mockito/plugin/codegen/GenMockitoCodeActionTest.java" />
         <option value="$PROJECT_DIR$/src/test/data/tests/codegen/afterEmptyClassTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/mockito/plugin/codegen/MockitoPluginPsiTestCase.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/mockito/plugin/codegen/CodeInjector.java" />
@@ -203,8 +205,10 @@
         <option value="$PROJECT_DIR$/src/main/java/org/mockito/plugin/codegen/RunnerCodeInjector.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/mockito/plugin/codegen/MockitoPluginUtils.java" />
         <option value="$PROJECT_DIR$/src/test/data/tested/codegen/ClassWithFieldsAndMethods.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mockito/plugin/codegen/FieldsCodeInjector.java" />
         <option value="$PROJECT_DIR$/src/test/data/tests/codegen/afterClassWithFieldsAndMethodsTest.java" />
+        <option value="$PROJECT_DIR$/src/test/data/tests/codegen/beforeClassWithAllMocks.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/mockito/plugin/codegen/GenMockitoCodeActionTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mockito/plugin/codegen/FieldsCodeInjector.java" />
       </list>
     </option>
   </component>
@@ -392,6 +396,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="codegen" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mockito-generator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mockito-generator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="META-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -454,7 +488,7 @@
       <recent name="org.mockito.plugin.action" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GenMockitoCodeActionTest.testInsertUnderTestFieldWhenClassHasOtherFields">
+  <component name="RunManager" selected="JUnit.GenMockitoCodeActionTest.testInsertIgnoresFileWithAllMocksInserted">
     <configuration default="false" name="GenMockitoCodeActionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -547,6 +581,32 @@
       <option name="MAIN_CLASS_NAME" value="org.mockito.plugin.codegen.RunnerCodeInjectorTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="GenMockitoCodeActionTest.testInsertIgnoresFileWithAllMocksInserted" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="org.mockito.plugin.codegen.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="mockito-generator" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="org.mockito.plugin.codegen" />
+      <option name="MAIN_CLASS_NAME" value="org.mockito.plugin.codegen.GenMockitoCodeActionTest" />
+      <option name="METHOD_NAME" value="testInsertIgnoresFileWithAllMocksInserted" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -739,20 +799,22 @@
       <patterns />
       <method />
     </configuration>
-    <list size="6">
+    <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Plugin.Plugin" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.FieldsCodeInjectorTest.testInsertUnderTestField" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.GenMockitoCodeActionTest" />
       <item index="3" class="java.lang.String" itemvalue="JUnit.GenMockitoCodeActionTest.testInsertUnderTestFieldWhenClassHasOtherFields" />
       <item index="4" class="java.lang.String" itemvalue="JUnit.FieldsCodeInjectorTest" />
       <item index="5" class="java.lang.String" itemvalue="JUnit.RunnerCodeInjectorTest" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.GenMockitoCodeActionTest.testInsertIgnoresFileWithAllMocksInserted" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.GenMockitoCodeActionTest.testInsertUnderTestFieldWhenClassHasOtherFields" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.GenMockitoCodeActionTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.RunnerCodeInjectorTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.FieldsCodeInjectorTest" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.GenMockitoCodeActionTest.testInsertIgnoresFileWithAllMocksInserted" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.GenMockitoCodeActionTest.testInsertUnderTestFieldWhenClassHasOtherFields" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.GenMockitoCodeActionTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.RunnerCodeInjectorTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.FieldsCodeInjectorTest" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -1159,16 +1221,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/data/tests/codegen/afterClassWithMockitoRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/mockito/plugin/codegen/MockitoPluginUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1187,14 +1239,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/mockito/plugin/codegen/GenMockitoCodeActionTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="58" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/refactoring/rename/NameSuggestionProvider.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.172414">
@@ -1203,21 +1247,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mockito/plugin/codegen/FieldsCodeInjector.java">
+    <entry file="file://$PROJECT_DIR$/src/test/data/tests/codegen/afterClassWithMockitoRunner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="121" column="65" selection-start-line="121" selection-start-column="65" selection-end-line="121" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/data/tests/codegen/afterClassWithFieldsAndMethodsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4074074">
-          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.50970876">
+          <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/data/tests/codegen/beforeClassWithAllMocksTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#601#602#0" expanded="false" />
+            <element signature="e#625#626#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/data/tests/codegen/afterClassWithAllMocksTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#601#602#0" expanded="false" />
+            <element signature="e#625#626#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/mockito/plugin/codegen/GenMockitoCodeActionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mockito/plugin/codegen/FieldsCodeInjector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5555556">
+          <caret line="88" column="114" selection-start-line="88" selection-start-column="114" selection-end-line="88" selection-end-column="114" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

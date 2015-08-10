@@ -86,7 +86,7 @@ public class FieldsCodeInjector implements CodeInjector {
         }
         boolean addedMocks = false;
         for (PsiField psiField : underTestPsiClass.getFields()) {
-            if (isNotPrimitive(psiField) && !existingFieldTypeNames.contains(psiField.getName())) {
+            if (isNotPrimitive(psiField) && !existingFieldTypeNames.contains(psiField.getType().getCanonicalText())) {
                 insertMockedField(psiClass, psiField);
                 addedMocks = true;
             }
