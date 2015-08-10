@@ -2,6 +2,9 @@ package org.mockito.plugin.codegen;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.*;
+import com.intellij.psi.codeStyle.JavaCodeStyleManager;
+import com.intellij.psi.codeStyle.SuggestedNameInfo;
+import com.intellij.psi.codeStyle.VariableKind;
 import com.intellij.psi.search.GlobalSearchScope;
 import org.jetbrains.annotations.NotNull;
 
@@ -41,12 +44,14 @@ public class FieldsCodeInjector implements CodeInjector {
     private final Project project;
     private final JavaPsiFacade javaPsiFacade;
     private final ImportOrganizer importOrganizer;
+    private final JavaCodeStyleManager codeStyleManager;
 
     public FieldsCodeInjector(PsiJavaFile psiJavaFile, ImportOrganizer importOrganizer) {
         this.psiJavaFile = psiJavaFile;
         this.project = psiJavaFile.getProject();
         this.javaPsiFacade = JavaPsiFacade.getInstance(project);
         this.importOrganizer = importOrganizer;
+        this.codeStyleManager =  JavaCodeStyleManager.getInstance(project);
     }
 
     @Override
@@ -81,9 +86,8 @@ public class FieldsCodeInjector implements CodeInjector {
         }
         boolean addedMocks = false;
         for (PsiField psiField : underTestPsiClass.getFields()) {
-            if (isNotPrimitive(psiField) &&
-                    !existingFieldTypeNames.contains(psiField.getName())) {
-                insertMockedField(psiClass, psiField.getType().getCanonicalText());
+            if (isNotPrimitive(psiField) && !existingFieldTypeNames.contains(psiField.getName())) {
+                insertMockedField(psiClass, psiField);
                 addedMocks = true;
             }
         }
@@ -109,31 +113,31 @@ public class FieldsCodeInjector implements CodeInjector {
     }
 
     private void insertUnderTestField(PsiClass psiClass, String fullyQualifiedTypeName) {
-        insertNewField(psiClass, fullyQualifiedTypeName, UNDER_TEST_FIELD_NAME, INJECT_MOCKS_CLASS_NAME);
+        PsiClassType subjectClassType = PsiType.getTypeByName(fullyQualifiedTypeName, project,
+                GlobalSearchScope.projectScope(project));
+        insertNewField(psiClass, subjectClassType, UNDER_TEST_FIELD_NAME, INJECT_MOCKS_CLASS_NAME);
     }
 
-    private void insertMockedField(PsiClass psiClass, String fullyQualifiedTypeName) {
-        String newFieldName = toShortClassName(fullyQualifiedTypeName);
+    private void insertMockedField(PsiClass psiClass, PsiField psiField) {
+        String newFieldName = suggestFieldName(psiField.getType());
+
         newFieldName = Character.toLowerCase(newFieldName.charAt(0)) +
                 newFieldName.substring(1, newFieldName.length());
 
-        insertNewField(psiClass, fullyQualifiedTypeName, newFieldName, MOCK_ANNOTATION_SHORT_NAME);
+        insertNewField(psiClass, psiField.getType(), newFieldName, MOCK_ANNOTATION_SHORT_NAME);
     }
 
-    private void insertNewField(PsiClass psiClass, String newFieldTypeName, String newFieldName,
-                                String annotationClassName) {
-        JavaPsiFacade javaPsiFacade = JavaPsiFacade.getInstance(project);
-        PsiClassType newFieldType = PsiType.getTypeByName(newFieldTypeName,
-                project, GlobalSearchScope.projectScope(project));
-        PsiField underTestField = javaPsiFacade.getElementFactory().createField(
-                newFieldName, newFieldType);
+    private void insertNewField(PsiClass psiClass, PsiType newFieldType, String newFieldName,
+            String annotationClassName) {
+        PsiField underTestField = javaPsiFacade.getElementFactory().createField(newFieldName, newFieldType);
         underTestField.getModifierList().addAnnotation(annotationClassName);
         psiClass.add(underTestField);
     }
 
     @NotNull
-    private String toShortClassName(String qualifiedClassName) {
-        return qualifiedClassName.substring(qualifiedClassName.lastIndexOf('.') + 1, qualifiedClassName.length());
+    private String suggestFieldName(PsiType psiType) {
+        SuggestedNameInfo info = codeStyleManager.suggestVariableName(VariableKind.FIELD, null, null, psiType);
+        return info.names[0];
     }
 
     private String getUnderTestQualifiedClassName(PsiClass psiClass) {

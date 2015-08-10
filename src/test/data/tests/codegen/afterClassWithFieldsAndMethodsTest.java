@@ -13,6 +13,8 @@ class ClassWithFieldsAndMethodsTest {
     private String testValue = "value";
     @Mock
     private Random random;
+    @Mock
+    private List<String> stringList;
     @InjectMocks
     private ClassWithFieldsAndMethods underTest;
 
