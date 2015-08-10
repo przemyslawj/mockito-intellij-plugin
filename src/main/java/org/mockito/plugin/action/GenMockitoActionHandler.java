@@ -10,12 +10,12 @@ import com.intellij.psi.PsiJavaFile;
 import org.mockito.plugin.codegen.FieldsCodeInjector;
 import org.mockito.plugin.codegen.ImportOrganizer;
 import org.mockito.plugin.codegen.RunnerCodeInjector;
+import org.mockito.plugin.codegen.StaticImportsInjector;
 
 /**
  * Created by przemek on 8/8/15.
  */
 public class GenMockitoActionHandler extends EditorWriteActionHandler {
-
 
     @Override
     public void executeWriteAction(Editor editor, Caret caret, DataContext dataContext) {
@@ -26,6 +26,7 @@ public class GenMockitoActionHandler extends EditorWriteActionHandler {
         runnerCodeInjector.inject();
         FieldsCodeInjector fieldsCodeInjector = new FieldsCodeInjector(psiJavaFile, importOrganizer);
         fieldsCodeInjector.inject();
-
+        StaticImportsInjector staticImportsInjector = new StaticImportsInjector(psiJavaFile, importOrganizer);
+        staticImportsInjector.inject();
     }
 }

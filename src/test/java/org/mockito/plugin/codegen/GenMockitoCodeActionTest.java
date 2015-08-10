@@ -9,7 +9,7 @@ public class GenMockitoCodeActionTest extends MockitoPluginPsiTestCase {
 
     @Test
     public void testInsertIgnoresFileWithMockitoRunner() throws Exception {
-        testFile("codegen/beforeClassWithMockitoRunner.java", "codegen/afterClassWithMockitoRunner.java");
+        testFile("codegen/beforeClassWithMockitoRunnerTest.java", "codegen/afterClassWithMockitoRunnerTest.java");
     }
 
     @Test

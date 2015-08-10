@@ -2,7 +2,9 @@ package org.mockito.plugin.codegen;
 
 import com.intellij.psi.JavaPsiFacade;
 import com.intellij.psi.PsiClass;
+import com.intellij.psi.PsiImportStaticStatement;
 import com.intellij.psi.PsiJavaFile;
+import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.ProjectScope;
 
 /**
@@ -11,16 +13,24 @@ import com.intellij.psi.search.ProjectScope;
 public class ImportOrganizer {
 
     private final JavaPsiFacade javaPsiFacade;
+    private final GlobalSearchScope projectSearchScope;
 
     public ImportOrganizer(JavaPsiFacade javaPsiFacade) {
         this.javaPsiFacade = javaPsiFacade;
+        this.projectSearchScope = ProjectScope.getAllScope(javaPsiFacade.getProject());
     }
 
     protected void addImport(PsiJavaFile psiJavaFile, String className) {
-        PsiClass mockitoRunnerClass = javaPsiFacade.findClass(className,
-                ProjectScope.getAllScope(psiJavaFile.getProject()));
-        if (mockitoRunnerClass != null) {
-            psiJavaFile.importClass(mockitoRunnerClass);
+        PsiClass clazz = javaPsiFacade.findClass(className, projectSearchScope);
+        if (clazz != null) {
+            psiJavaFile.importClass(clazz);
         }
+    }
+
+    protected void addStaticImport(PsiJavaFile psiJavaFile, String className) {
+        PsiClass psiClass = javaPsiFacade.findClass(className, projectSearchScope);
+        PsiImportStaticStatement importStaticStatement = javaPsiFacade.getElementFactory().createImportStaticStatement(
+                psiClass, "*");
+        psiJavaFile.getImportList().add(importStaticStatement);
     }
 }
