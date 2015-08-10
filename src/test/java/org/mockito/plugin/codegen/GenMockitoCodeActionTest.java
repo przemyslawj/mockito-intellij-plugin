@@ -30,7 +30,7 @@ public class GenMockitoCodeActionTest extends MockitoPluginPsiTestCase {
 
     @Test
     public void testInsertIgnoresFileWithAllMocksInserted() throws Exception {
-        testFile("codegen/beforeClassWithAllMocksTest.java",
+        testFile("codegen/afterClassWithAllMocksTest.java",
                 "codegen/afterClassWithAllMocksTest.java");
     }
 }

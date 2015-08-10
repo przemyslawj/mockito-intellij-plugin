@@ -1,5 +1,6 @@
 package org.mockito.plugin.codegen;
 
+import com.intellij.psi.PsiImportStaticStatement;
 import com.intellij.psi.PsiJavaFile;
 
 /**
@@ -8,6 +9,9 @@ import com.intellij.psi.PsiJavaFile;
  * Created by przemek on 8/10/15.
  */
 public class StaticImportsInjector implements CodeInjector {
+
+    public static final String MOCKITO_FULLY_QUALIFIED_CLASS_NAME = "org.mockito.Mockito";
+    public static final String GROUPED_MOCKITO_STATIC_IMPORT = MOCKITO_FULLY_QUALIFIED_CLASS_NAME + ".*";
 
     private final PsiJavaFile psiJavaFile;
     private final ImportOrganizer importOrganizer;
@@ -19,6 +23,11 @@ public class StaticImportsInjector implements CodeInjector {
 
     @Override
     public void inject() {
-        importOrganizer.addStaticImport(psiJavaFile, "org.mockito.Mockito");
+        for (PsiImportStaticStatement staticImport : psiJavaFile.getImportList().getImportStaticStatements()) {
+            if (staticImport.getText().contains(GROUPED_MOCKITO_STATIC_IMPORT)) {
+                return;
+            }
+        }
+        importOrganizer.addStaticImport(psiJavaFile, MOCKITO_FULLY_QUALIFIED_CLASS_NAME);
     }
 }
