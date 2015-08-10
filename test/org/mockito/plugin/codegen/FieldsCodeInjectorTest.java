@@ -10,7 +10,7 @@ public class FieldsCodeInjectorTest extends MockitoPluginPsiTestCase {
     FieldsCodeInjector underTest = new FieldsCodeInjector();
 
     @Test
-    public void testInsertUnderTestField() throws Exception {
+    public void testInsertUnderTestFieldWhenUnderTestFieldAdded() throws Exception {
         testFile(underTest, "EmptyClassTest.java", "expected/UnderTestFieldAdded.java");
     }
 

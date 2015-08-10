@@ -13,13 +13,17 @@ import java.net.URL;
  */
 public class MockitoPluginPsiTestCase extends PsiTestCase {
 
-    public void testFile(CodeInjector underTest, String inputFileName, String expectedFile) throws Exception {
-        PsiJavaFile psiFile = (PsiJavaFile) this.createFile(inputFileName, loadFile(inputFileName));
+    public void testFile(CodeInjector underTest, PsiJavaFile inputPsiFile, String expectedFile) throws Exception {
 
         CodeInjectorTester tester = new CodeInjectorTester(underTest);
-        tester.runAction(psiFile);
+        tester.runAction(inputPsiFile);
 
-        assertChanges(expectedFile, psiFile);
+        assertChanges(expectedFile, inputPsiFile);
+    }
+
+    public void testFile(CodeInjector underTest, String inputFileName, String expectedFile) throws Exception {
+        PsiJavaFile psiFile = (PsiJavaFile) this.createFile(inputFileName, loadFile(inputFileName));
+        testFile(underTest, psiFile, expectedFile);
     }
 
     private void assertChanges(String expectedFile, PsiJavaFile psiFile) throws IOException {
