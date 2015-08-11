@@ -33,4 +33,10 @@ public class GenMockitoCodeActionTest extends MockitoPluginPsiTestCase {
         testFile("codegen/afterClassWithAllMocksTest.java",
                 "codegen/afterClassWithAllMocksTest.java");
     }
+
+    @Test
+    public void testInsertIgnoresStaticField() throws Exception {
+        testFile("codegen/beforeClassWithStaticFieldsTest.java",
+                "codegen/afterClassWithStaticFieldsTest.java");
+    }
 }

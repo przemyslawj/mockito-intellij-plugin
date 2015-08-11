@@ -16,7 +16,7 @@ import java.util.Set;
  * - mocked fields
  * - subject of the test
  *
- * Mocked fields are inserted for each single non-primitive object defined in the tested class. So far the fields
+ * Mocked fields are inserted for each non-static object defined in the tested class. So far the fields
  * declared in parent of the tested class are ignored. Example of the code generated for an object of type ClassName:
  * <code>
  *     @Mock
@@ -86,7 +86,9 @@ public class FieldsCodeInjector implements CodeInjector {
         }
         boolean addedMocks = false;
         for (PsiField psiField : underTestPsiClass.getFields()) {
-            if (isNotPrimitive(psiField) && !existingFieldTypeNames.contains(psiField.getType().getCanonicalText())) {
+            if (isNotPrimitive(psiField)
+                    && isNotStatic(psiField)
+                    && !existingFieldTypeNames.contains(psiField.getType().getCanonicalText())) {
                 insertMockedField(psiClass, psiField);
                 addedMocks = true;
             }
@@ -94,6 +96,10 @@ public class FieldsCodeInjector implements CodeInjector {
         if (addedMocks) {
             importOrganizer.addImport(psiJavaFile, MOCK_ANNOTATION_QUALIFIED_NAME);
         }
+    }
+
+    private boolean isNotStatic(PsiField psiField) {
+        return !psiField.getModifierList().getText().contains("static");
     }
 
     private boolean isNotPrimitive(PsiField psiField) {
