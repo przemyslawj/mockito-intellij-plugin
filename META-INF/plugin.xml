@@ -1,17 +1,30 @@
 <idea-plugin version="2">
   <id>com.yourcompany.unique.plugin.id</id>
-  <name>Plugin display name here</name>
+  <name>Mockito injections generator</name>
   <version>1.0</version>
   <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">TalkBackLabs</vendor>
 
   <description><![CDATA[
-      Enter short description for your plugin here.<br>
-      <em>most HTML tags may be used</em>
+      The plugin adds boilerplate code to a Mockito unit test.
+
+      <p>
+      The following elements are auto-generated:
+      <ul>
+          <li><code>RunWith(MockitoJUnitRunner.class)</code> annotation for the class</li>
+          <li>Mocked fields for each non-static object declared in the test subject</li>
+          <li>Field for the test subject with <code>@InjectMocks</code> annotation</li>
+          <li>static imports for useful mockito functions like <code>when</code>, <code>verify</code>
+      </ul>
+      </p>
+
+      <p>
+      To generate the Mockito code with the plugin hit "<ctrl> <shift> <M>" or use a choose the action from
+      "Generate Action" context menu.
+      </p>
     ]]></description>
 
   <change-notes><![CDATA[
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>
+      Initial version of the plugin
     ]]>
   </change-notes>
 
@@ -42,8 +55,8 @@
   <actions>
 
       <action id="org.mockito.plugin.action.GenMockitoCodeAction" class="org.mockito.plugin.action.GenMockitoCodeAction"
-              text="Mockito.NewTestAction" description="create new mockito test">
-          <add-to-group group-id="ToolsMenu" anchor="first"/>
+              text="Add Mockito Unit Test Code" description="create new mockito test">
+          <add-to-group group-id="GenerateGroup" anchor="last"/>
           <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl M"/>
       </action>
   </actions>
