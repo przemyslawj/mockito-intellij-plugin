@@ -1,8 +1,8 @@
 <idea-plugin version="2">
-  <id>com.yourcompany.unique.plugin.id</id>
-  <name>Mockito injections generator</name>
+  <id>com.przemyslawj.mockito.generator</id>
+  <name>Mockito code generator</name>
   <version>1.0</version>
-  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">TalkBackLabs</vendor>
+  <vendor email="jarzeb5@gmail.com">przemyslawj</vendor>
 
   <description><![CDATA[
       The plugin adds boilerplate code to a Mockito unit test.
@@ -18,7 +18,7 @@
       </p>
 
       <p>
-      To generate the Mockito code with the plugin hit "<ctrl> <shift> <M>" or use a choose the action from
+        To generate the Mockito code with the plugin hit <code>ctrl shift M</code> or use a choose the action from
       "Generate Action" context menu.
       </p>
     ]]></description>
