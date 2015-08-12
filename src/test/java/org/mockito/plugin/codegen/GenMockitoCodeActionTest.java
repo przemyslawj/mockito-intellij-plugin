@@ -39,4 +39,10 @@ public class GenMockitoCodeActionTest extends MockitoPluginPsiTestCase {
         testFile("codegen/beforeClassWithStaticFieldsTest.java",
                 "codegen/afterClassWithStaticFieldsTest.java");
     }
+
+    @Test
+    public void testOtherThanJavaFileIgnored() throws Exception {
+        testFile("codegen/beforeNonJavaFileTest.groovy",
+                "codegen/beforeNonJavaFileTest.groovy");
+    }
 }

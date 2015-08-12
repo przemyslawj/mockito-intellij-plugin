@@ -5,7 +5,7 @@ import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.Presentation;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.actionSystem.EditorAction;
-import com.intellij.psi.PsiJavaFile;
+import com.intellij.psi.PsiFile;
 
 /**
  * Created by przemek on 8/8/15.
@@ -23,10 +23,10 @@ public class GenMockitoCodeAction extends EditorAction {
      */
     @Override
     public void update(Editor editor, Presentation presentation, DataContext dataContext) {
-        PsiJavaFile psiJavaFile = (PsiJavaFile) dataContext.getData(CommonDataKeys.PSI_FILE.getName());
+        PsiFile psiFile = (PsiFile) dataContext.getData(CommonDataKeys.PSI_FILE.getName());
         boolean enabled = false;
-        if (psiJavaFile != null) {
-            enabled = psiJavaFile.getName().endsWith(TEST_JAVA_FILE_NAME_SUFFIX);
+        if (psiFile != null) {
+            enabled = psiFile.getName().endsWith(TEST_JAVA_FILE_NAME_SUFFIX);
         }
         presentation.setEnabled(enabled);
     }
