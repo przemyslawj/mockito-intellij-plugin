@@ -86,9 +86,11 @@ public class FieldsCodeInjector implements CodeInjector {
         }
         boolean addedMocks = false;
         for (PsiField psiField : underTestPsiClass.getFields()) {
+            PsiType psiType = psiField.getType();
             if (isNotPrimitive(psiField)
                     && isNotStatic(psiField)
-                    && !existingFieldTypeNames.contains(psiField.getType().getCanonicalText())) {
+                    && isNotFinalClass(psiType)
+                    && !existingFieldTypeNames.contains(psiType.getCanonicalText())) {
                 insertMockedField(psiClass, psiField);
                 addedMocks = true;
             }
@@ -96,6 +98,14 @@ public class FieldsCodeInjector implements CodeInjector {
         if (addedMocks) {
             importOrganizer.addImport(psiJavaFile, MOCK_ANNOTATION_QUALIFIED_NAME);
         }
+    }
+
+    private boolean isNotFinalClass(PsiType psiType) {
+        PsiClass psiClass = javaPsiFacade.findClass(psiType.getCanonicalText(), psiType.getResolveScope());
+        if (psiClass == null) {
+            return true;
+        }
+        return !psiClass.getModifierList().hasExplicitModifier("final");
     }
 
     private boolean isNotStatic(PsiField psiField) {

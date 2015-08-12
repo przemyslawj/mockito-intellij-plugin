@@ -45,4 +45,10 @@ public class GenMockitoCodeActionTest extends MockitoPluginPsiTestCase {
         testFile("codegen/beforeNonJavaFileTest.groovy",
                 "codegen/beforeNonJavaFileTest.groovy");
     }
+
+    @Test
+    public void testFinalClassFieldsIgnored() throws Exception {
+        testFile("codegen/beforeClassWithFinalClassFieldTest.java",
+                "codegen/afterClassWithFinalClassFieldTest.java");
+    }
 }
