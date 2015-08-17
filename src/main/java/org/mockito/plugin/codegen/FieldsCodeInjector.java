@@ -85,7 +85,7 @@ public class FieldsCodeInjector implements CodeInjector {
             return;
         }
         boolean addedMocks = false;
-        for (PsiField psiField : underTestPsiClass.getFields()) {
+        for (PsiField psiField : underTestPsiClass.getAllFields()) {
             PsiType psiType = psiField.getType();
             if (isNotPrimitive(psiField)
                     && isNotStatic(psiField)

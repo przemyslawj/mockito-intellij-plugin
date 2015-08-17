@@ -5,10 +5,10 @@
   <vendor email="jarzeb5@gmail.com">przemyslawj</vendor>
 
   <description><![CDATA[
-      The plugin adds boilerplate code to a Mockito unit test.
+      The plugin generates boilerplate Mockito code that usually needs to be added manually to unit tests.
 
       <p>
-      The following elements are auto-generated:
+      Auto-generated are:
       <ul>
           <li><code>RunWith(MockitoJUnitRunner.class)</code> annotation for the class</li>
           <li>Mocked fields for each non-static object declared in the test subject</li>
@@ -24,7 +24,7 @@
     ]]></description>
 
   <change-notes><![CDATA[
-      Initial version of the plugin
+      Added generation of mocked fields for objects declared in a parent class of the tested class.
     ]]>
   </change-notes>
 

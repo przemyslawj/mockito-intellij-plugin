@@ -51,4 +51,10 @@ public class GenMockitoCodeActionTest extends MockitoPluginPsiTestCase {
         testFile("codegen/beforeClassWithFinalClassFieldTest.java",
                 "codegen/afterClassWithFinalClassFieldTest.java");
     }
+
+    @Test
+    public void testParentClassFieldsIncluded() throws Exception {
+        testFile("codegen/beforeClassWithHierarchyTest.java",
+                "codegen/afterClassWithHierarchyTest.java");
+    }
 }
