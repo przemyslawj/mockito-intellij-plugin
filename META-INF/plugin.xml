@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>com.przemyslawj.mockito.generator</id>
   <name>Mockito code generator</name>
-  <version>1.0</version>
+  <version>1.1</version>
   <vendor email="jarzeb5@gmail.com">przemyslawj</vendor>
 
   <description><![CDATA[
