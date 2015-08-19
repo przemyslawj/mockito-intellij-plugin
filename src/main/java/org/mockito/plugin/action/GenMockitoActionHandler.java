@@ -20,7 +20,7 @@ public class GenMockitoActionHandler extends EditorWriteActionHandler {
     @Override
     public void executeWriteAction(Editor editor, Caret caret, DataContext dataContext) {
         PsiJavaFile psiJavaFile = (PsiJavaFile) dataContext.getData(CommonDataKeys.PSI_FILE.getName());
-        ImportOrganizer importOrganizer = new ImportOrganizer(JavaPsiFacade.getInstance(psiJavaFile.getProject()));
+        ImportOrganizer importOrganizer = new ImportOrganizer(editor, JavaPsiFacade.getInstance(psiJavaFile.getProject()));
 
         RunnerCodeInjector runnerCodeInjector = new RunnerCodeInjector(psiJavaFile, importOrganizer);
         runnerCodeInjector.inject();

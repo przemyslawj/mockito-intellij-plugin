@@ -28,6 +28,6 @@ public class StaticImportsInjector implements CodeInjector {
                 return;
             }
         }
-        importOrganizer.addStaticImport(psiJavaFile, MOCKITO_FULLY_QUALIFIED_CLASS_NAME);
+        importOrganizer.addStaticImportForAllMethods(psiJavaFile, MOCKITO_FULLY_QUALIFIED_CLASS_NAME);
     }
 }

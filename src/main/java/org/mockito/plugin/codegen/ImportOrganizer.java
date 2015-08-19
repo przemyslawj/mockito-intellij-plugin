@@ -1,5 +1,7 @@
 package org.mockito.plugin.codegen;
 
+import com.intellij.codeInsight.hint.HintManager;
+import com.intellij.openapi.editor.Editor;
 import com.intellij.psi.JavaPsiFacade;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiImportStaticStatement;
@@ -14,23 +16,36 @@ public class ImportOrganizer {
 
     private final JavaPsiFacade javaPsiFacade;
     private final GlobalSearchScope projectSearchScope;
+    private final Editor editor;
 
-    public ImportOrganizer(JavaPsiFacade javaPsiFacade) {
+    public ImportOrganizer(Editor editor, JavaPsiFacade javaPsiFacade) {
+        this.editor = editor;
         this.javaPsiFacade = javaPsiFacade;
         this.projectSearchScope = ProjectScope.getAllScope(javaPsiFacade.getProject());
     }
 
-    protected void addImport(PsiJavaFile psiJavaFile, String className) {
-        PsiClass clazz = javaPsiFacade.findClass(className, projectSearchScope);
-        if (clazz != null) {
-            psiJavaFile.importClass(clazz);
+    protected void addClassImport(PsiJavaFile psiJavaFile, String className) {
+        PsiClass psiClass = javaPsiFacade.findClass(className, projectSearchScope);
+        if (psiClass == null) {
+            showImportError(className);
+            return;
         }
+        psiJavaFile.importClass(psiClass);
     }
 
-    protected void addStaticImport(PsiJavaFile psiJavaFile, String className) {
+    protected void addStaticImportForAllMethods(PsiJavaFile psiJavaFile, String className) {
         PsiClass psiClass = javaPsiFacade.findClass(className, projectSearchScope);
+        if (psiClass == null) {
+            showImportError(className);
+            return;
+        }
         PsiImportStaticStatement importStaticStatement = javaPsiFacade.getElementFactory().createImportStaticStatement(
                 psiClass, "*");
         psiJavaFile.getImportList().add(importStaticStatement);
+    }
+
+    private void showImportError(String importClassName) {
+        HintManager.getInstance().showErrorHint(editor, "Class: " + importClassName
+                + " was not found on the classpath, make sure Mockito and JUnit are added to dependencies");
     }
 }

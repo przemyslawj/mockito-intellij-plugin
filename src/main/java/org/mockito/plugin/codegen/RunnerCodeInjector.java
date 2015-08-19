@@ -29,8 +29,8 @@ public class RunnerCodeInjector implements CodeInjector {
         PsiModifierList modifierList = psiClass.getModifierList();
         if (!containsRunnerAnnotation(modifierList)) {
             modifierList.addAnnotation("RunWith(MockitoJUnitRunner.class)");
-            importOrganizer.addImport(psiJavaFile, MOCKITO_RUNNER_QUALIFIED_CLASS_NAME);
-            importOrganizer.addImport(psiJavaFile, RUN_WITH_QUALIFIED_CLASS_NAME);
+            importOrganizer.addClassImport(psiJavaFile, MOCKITO_RUNNER_QUALIFIED_CLASS_NAME);
+            importOrganizer.addClassImport(psiJavaFile, RUN_WITH_QUALIFIED_CLASS_NAME);
         }
     }
 

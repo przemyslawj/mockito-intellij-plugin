@@ -73,7 +73,7 @@ public class FieldsCodeInjector implements CodeInjector {
                                       String underTestQualifiedClassName) {
         if (!existingFieldTypeNames.contains(underTestQualifiedClassName)) {
             insertUnderTestField(psiClass, underTestQualifiedClassName);
-            importOrganizer.addImport(psiJavaFile, INJECT_MOCKS_ANNOTATION_QUALIFIED_NAME);
+            importOrganizer.addClassImport(psiJavaFile, INJECT_MOCKS_ANNOTATION_QUALIFIED_NAME);
         }
     }
 
@@ -96,7 +96,7 @@ public class FieldsCodeInjector implements CodeInjector {
             }
         }
         if (addedMocks) {
-            importOrganizer.addImport(psiJavaFile, MOCK_ANNOTATION_QUALIFIED_NAME);
+            importOrganizer.addClassImport(psiJavaFile, MOCK_ANNOTATION_QUALIFIED_NAME);
         }
     }
 
