@@ -28,6 +28,7 @@ public abstract class MockitoPluginPsiTestCase extends LightCodeInsightFixtureTe
         public void configureModule(@NotNull Module module, @NotNull ModifiableRootModel model,
                                     @NotNull ContentEntry contentEntry) {
             PsiTestUtil.addLibrary(module, model, "mockito",  "lib", "mockito-all-1.10.19.jar");
+            PsiTestUtil.addLibrary(module, model, "junit",  "lib", "junit-4.11.jar");
             super.configureModule(module, model, contentEntry);
         }
     }
