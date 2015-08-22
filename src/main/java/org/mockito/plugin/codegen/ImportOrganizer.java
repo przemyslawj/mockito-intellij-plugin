@@ -1,6 +1,5 @@
 package org.mockito.plugin.codegen;
 
-import com.intellij.codeInsight.hint.HintManager;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.psi.JavaPsiFacade;
 import com.intellij.psi.PsiClass;
@@ -8,6 +7,7 @@ import com.intellij.psi.PsiImportStaticStatement;
 import com.intellij.psi.PsiJavaFile;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.ProjectScope;
+import com.intellij.refactoring.util.CommonRefactoringUtil;
 
 /**
  * Created by przemek on 8/9/15.
@@ -45,7 +45,9 @@ public class ImportOrganizer {
     }
 
     private void showImportError(String importClassName) {
-        HintManager.getInstance().showErrorHint(editor, "Class: " + importClassName
-                + " was not found on the classpath, make sure Mockito and JUnit are added to dependencies");
+        String msg = String.format(
+                "Class: %s was not found on the classpath, make sure Mockito and JUnit are added to dependencies",
+                importClassName);
+        CommonRefactoringUtil.showErrorHint(editor.getProject(), editor, msg, null, null);
     }
 }

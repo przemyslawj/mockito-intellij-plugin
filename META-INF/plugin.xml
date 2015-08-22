@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>com.przemyslawj.mockito.generator</id>
   <name>Mockito code generator</name>
-  <version>1.2</version>
+  <version>1.3</version>
   <vendor email="jarzeb5@gmail.com">przemyslawj</vendor>
 
   <description><![CDATA[
@@ -26,7 +26,7 @@
   <change-notes><![CDATA[
       <ul>
       <li>Added generation of mocked fields for objects declared in a parent class of the tested class</li>
-      <li>Fixed crashing of the plugin when used without Mockito in the dependencies</li>
+      <li>Show error message when plugin used without Mockito or JUnit in the dependencies</li>
       </ul>
     ]]>
   </change-notes>
