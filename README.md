@@ -1,4 +1,5 @@
-# mockito-intellij-plugin
+**I stopped supporting the plugin, please feel free to fork the project.**
+
 Intellij plugin for generation of Mockito code in unit tests
 
 ## Plugin
