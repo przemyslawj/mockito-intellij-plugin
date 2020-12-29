@@ -1,4 +1,4 @@
-**I stopped supporting the plugin, please feel free to fork the project.**
+**I stopped supporting the plugin, please feel free to fork the project. Please consider using https://plugins.jetbrains.com/plugin/12833-junit-5-mockito-code-generator as an alternative.**
 
 Intellij plugin for generation of Mockito code in unit tests
 
